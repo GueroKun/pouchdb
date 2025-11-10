@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PouchDB Personas</title>
+    <link rel="manifest" href="/pouchdb/mainmanifest.json">
+  <link rel="apple-touch-icon" href="/images/icons/180.png" sizes="180x180">
+  <link rel="apple-touch-icon-precomposed" href="/images/icons/180.png">
+  <style>
+    /* === Estilo general === */
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: #f6f7fb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    fieldset {
+      border: none;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      margin-top: 30px;
+    }
+
+    legend {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #btnList {
+      margin-top: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* === Lista de personas === */
+    #listContainer {
+      width: 90%;
+      max-width: 400px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+
+    .person-item {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      font-size: 0.95em;
+      position: relative;
+    }
+
+    .person-item strong {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: background-color 0.2s ease;
+    }
+
+    .delete-btn:hover {
+      background-color: #b02a37;
+    }
+
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <fieldset>
+    <legend>Formulario PouchDB</legend>
+    <input id="name" placeholder="Ingresa tu nombre" />
+    <input id="age" placeholder="Ingresa tu edad" />
+    <input id="email" placeholder="Ingresa tu email" />
+    <button id="submit" type="button">Guardar</button>
+  </fieldset>
+
+  <button id="btnList">Mostrar lista</button>
+
+  <div id="listContainer"></div>
+
+  <script src="register.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
